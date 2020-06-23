@@ -1,4 +1,4 @@
-pipeline {
+peline {
     agent none
     options {
         skipStagesAfterUnstable()
@@ -33,7 +33,7 @@ pipeline {
         stage('Deliver') { 
             agent any
             environment { 
-                VOLUME = '/var/jenkins_home/workspace/$JOB_NAME/sources:/src'
+                VOLUME = '/root/jenkins/jenkins-data/jenkins_home/workspace/$JOB_NAME/sources:/src'
                 IMAGE = 'cdrx/pyinstaller-linux:python2'
             }
             steps {
